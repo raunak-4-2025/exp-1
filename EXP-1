@@ -1,93 +1,42 @@
-// Base Class
-
+// Base class
 class Animal {
-
     // Method to be overridden
-
     public void makeSound() {
-
-        System.out.println("Some generic animal sound");
-
+        System.out.println("Animal makes a sound");
     }
-
 }
 
- 
-
-// Derived Class: Dog
-
+// Derived class Dog
 class Dog extends Animal {
-
     @Override
-
     public void makeSound() {
-
-        System.out.println("Woof! Woof!");
-
+        System.out.println("Dog barks: Woof Woof!");
     }
-
 }
 
- 
-
-// Derived Class: Cat
-
+// Derived class Cat
 class Cat extends Animal {
-
     @Override
-
     public void makeSound() {
-
-        System.out.println("Meow! Meow!");
-
+        System.out.println("Cat meows: Meow Meow!");
     }
-
 }
 
- 
-
-// Main Class to Demonstrate Polymorphism
-
-public class PolymorphismDemo {
-
+// Main class to demonstrate polymorphism
+public class AnimalTest {
     public static void main(String[] args) {
+        // Create an Animal reference that can hold a Dog object
+        Animal myDog = new Dog();
+        myDog.makeSound(); // Calls Dog's makeSound()
 
-        // Create an Animal reference holding a Dog object
-
-        Animal animal1 = new Dog();
-
-        // Create an Animal reference holding a Cat object
-
-        Animal animal2 = new Cat();
-
- 
-
-        // Call the overridden methods
-
-        System.out.println("Animal reference holding Dog object:");
-
-        animal1.makeSound(); // Output: Woof! Woof!
-
- 
-
-        System.out.println("\nAnimal reference holding Cat object:");
-
-        animal2.makeSound(); // Output: Meow! Meow!
-
- 
-
-        // Demonstrating polymorphism in an array
-
-        Animal[] animals = {new Dog(), new Cat()};
-
-        System.out.println("\nDemonstrating polymorphism in an array:");
-
-        for (Animal animal : animals) {
-
-            animal.makeSound(); // Output: Woof! Woof! and Meow! Meow!
-
-        }
-
+        // Create an Animal reference that can hold a Cat object
+        Animal myCat = new Cat();
+        myCat.makeSound(); // Calls Cat's makeSound()
     }
-
 }
+
+
+EXPECTED OUTPUT:
+
+1) Dog barks: Woof Woof!
+2) Cat meows: Meow Meow!
