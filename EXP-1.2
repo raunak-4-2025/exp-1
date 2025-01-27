@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input two strings representing numbers
+        System.out.print("Enter the first number: ");
+        String firstNumberStr = scanner.nextLine();
+        System.out.print("Enter the second number: ");
+        String secondNumberStr = scanner.nextLine();
+
+        try {
+            // Convert strings to Integer and Double
+            Integer firstNumber = Integer.valueOf(firstNumberStr);
+            Integer secondNumber = Integer.valueOf(secondNumberStr);
+
+            // Perform arithmetic operations
+            int addition = firstNumber + secondNumber;
+            int subtraction = firstNumber - secondNumber;
+            int multiplication = firstNumber * secondNumber;
+            double division = (double) firstNumber / secondNumber; // Cast to double for accurate division
+
+            // Display results
+            System.out.println("Addition: " + addition);
+            System.out.println("Subtraction: " + subtraction);
+            System.out.println("Multiplication: " + multiplication);
+            System.out.println("Division: " + division);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter valid numbers.");
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
+    }
+}
+
+
+SAMPLE OUTPUT:
+
+Enter the first number: 10
+Enter the second number: 5
+Addition: 15
+Subtraction: 5
+Multiplication: 50
+Division: 2.0
